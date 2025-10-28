@@ -43,8 +43,34 @@ html, body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
+}
+
+/* ✅ VIDEO 슬라이드 전용 버튼 */
+.video-buttons-inline {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.video-buttons-inline button {
+  background: rgb(135, 194, 249);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.video-buttons-inline button:hover {
+  background: #fff;
+  color: rgb(135, 194, 249);
+  border: 1px solid #87c2f9;
+  transform: translateY(-2px);
 }
 
 /* keyword */
@@ -62,7 +88,7 @@ html, body {
   color: #313131;
 }
 
-/* C: 스와이퍼 영역 */
+/* 스와이퍼 영역 */
 .swiper-area {
   position: relative;
   background: rgb(255, 255, 255);
@@ -72,7 +98,7 @@ html, body {
   justify-content: center;
 }
 
-/* ✅ Swiper 크기 및 배경 */
+/* Swiper 크기 및 배경 */
 .mySwiper {
   width: 80%;
   height: 70%;
@@ -87,8 +113,7 @@ html, body {
   object-fit: contain;
 }
 
-/* ✅ 페이지네이션: Swiper 내부 자동 생성용 */
-
+/* 페이지네이션 */
 .swiper-pagination {
   position: absolute;
   transform: translateX(0);

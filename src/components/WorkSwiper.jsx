@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { gsap } from "gsap";
 
-// Swiper 스타일 import
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
@@ -104,7 +103,7 @@ const WorkSwiper = () => {
     });
   };
 
-  // ✅ 기존 텍스트 등장 애니메이션
+  // ✅ 텍스트 박스 초기 등장 애니메이션
   useEffect(() => {
     gsap.from(".text-box", {
       opacity: 0,
@@ -114,7 +113,7 @@ const WorkSwiper = () => {
     });
   }, []);
 
-  // ✅ 페이지 전체 진입 애니메이션 추가 (요청한 코드)
+  // ✅ 페이지 전체 진입 애니메이션
   useEffect(() => {
     const timer = setTimeout(() => {
       gsap.from(".page-content", { opacity: 0, y: 50, duration: 1 });
@@ -130,11 +129,38 @@ const WorkSwiper = () => {
           {active.title}
         </h2>
 
-        <div className="color-chips" ref={chipsRef}>
-          {active.colors.map((color, idx) => (
-            <div key={idx} className="chip" style={{ background: color }}></div>
-          ))}
-        </div>
+        {/* ✅ VIDEO 슬라이드일 경우 색상칩 대신 버튼 표시 */}
+        {active.title === "VIDEO" ? (
+          <div className="video-buttons-inline" ref={chipsRef}>
+            <button
+              onClick={() =>
+                window.open("hhttps://youtu.be/wFsmd1jOVrs", "_blank")
+              }
+            >
+              01
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://youtu.be/qYRsoO6QHO4", "_blank")
+              }
+            >
+              02
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://www.youtube.com/watch?v=ZZZZZZZZZ", "_blank")
+              }
+            >
+              03
+            </button>
+          </div>
+        ) : (
+          <div className="color-chips" ref={chipsRef}>
+            {active.colors.map((color, idx) => (
+              <div key={idx} className="chip" style={{ background: color }}></div>
+            ))}
+          </div>
+        )}
 
         <div className="keyword" id="keyword" ref={keywordRef}>
           {active.keyword}
