@@ -1,0 +1,114 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  background: #ffffff;
+  color: #313131;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 메인 컨테이너 */
+#container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  height: 100vh;
+}
+
+/* 텍스트 박스 */
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem;
+  background: #dee6ebe5;
+}
+
+.text-box h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+/* color chips */
+.color-chips {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.color-chips .chip {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+/* keyword */
+.keyword {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #313131;
+}
+
+/* detail */
+.detail {
+  font-size: 1rem;
+  opacity: 0.9;
+  color: #313131;
+}
+
+/* C: 스와이퍼 영역 */
+.swiper-area {
+  position: relative;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ Swiper 크기 및 배경 */
+.mySwiper {
+  width: 80%;
+  height: 70%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ✅ 페이지네이션: Swiper 내부 자동 생성용 */
+
+.swiper-pagination {
+  position: absolute;
+  transform: translateX(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(50, 50, 50, 0.2);
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #87c2f9;
+  transform: scale(1.3);
+}
