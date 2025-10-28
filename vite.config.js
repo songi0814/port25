@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/2025port/",
+  base: "/port25/", // 👈 GitHub repo 이름과 동일해야 함
 });

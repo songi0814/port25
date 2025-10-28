@@ -1,14 +1,14 @@
 {
   "name": "2025port",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
-  "homepage": "https://songi0814.github.io/2025port",
+  "homepage": "https://songi0814.github.io/port25",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
+    "lint": "eslint .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
