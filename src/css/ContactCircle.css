@@ -1,3 +1,8 @@
+#contact-circle {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 .contact-fixed {
   position: fixed;
   bottom: 2rem;

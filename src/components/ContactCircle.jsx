@@ -25,7 +25,7 @@ const ContactCircle = () => {
   const text = ["c", "o", "n", "t", "a", "c", "t", "*", "m", "e", "*"];
 
   return (
-    <div className="contact-fixed page-content">
+    <div id="contact-circle" className="contact-fixed page-content">
       <button className="contact-btn" onClick={handleClick}>
         <p className="circle-text">
           {text.map((char, i) => {

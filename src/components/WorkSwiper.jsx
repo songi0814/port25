@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import "../css/work.css";
+import "../css/work.css"; // ✅ 스타일 연결
 
 const slidesData = [
   {
@@ -14,56 +14,56 @@ const slidesData = [
     colors: ["#E4DBD5", "#9E7965", "#530501"],
     keyword: "모던 | 고급 | 깔끔함 | 베이직",
     detail: "패키지 디자인 / SNS 콘텐츠 제작 및 관리",
-    img: "/img/imgwds.png",
+    img: "/port25/img/imgwds.png", // ✅ 절대경로 (리포 이름 포함)
   },
   {
     title: "우미블링",
     colors: ["#FFF6E8", "#DF7645", "#160A0B"],
     keyword: "모던 | 위트 | 전통 | 고급",
     detail: "브랜드 제작 참여 / 패키지 디자인 / 로고 / 제품 촬영 / 상세페이지",
-    img: "/img/imgwmbling.png",
+    img: "/port25/img/imgwmbling.png",
   },
   {
     title: "애나의 정원",
     colors: ["#C7C493", "#C34242", "#7E799F", "#160A0B"],
     keyword: "캐주얼 | 위트",
     detail: "패키지 디자인 / 상세페이지",
-    img: "/img/imganna.png",
+    img: "/port25/img/imganna.png",
   },
   {
     title: "청기와타운",
     colors: ["#C05B16", "#841816", "#695635", "#4B266C"],
     keyword: "심플함 | 가독성 | 정보전달",
     detail: "상세페이지 / 제품촬영",
-    img: "/img/imgckwtown.png",
+    img: "/port25/img/imgckwtown.png",
   },
   {
     title: "선데이버거클럽",
     colors: ["#F0DAA1", "#E9B68C", "#E4862D", "#BE0000"],
     keyword: "캐주얼 | 위트",
     detail: "패키지디자인 / 상세페이지",
-    img: "/img/imgsunday.png",
+    img: "/port25/img/imgsunday.png",
   },
   {
     title: "삼표갈비",
     colors: ["#FAF3DD", "#84845C", "#8C041C"],
     keyword: "전통 | 모던 | 심플",
     detail: "패키지 디자인 / 상세페이지 / 제품촬영",
-    img: "/img/imgsampyo.png",
+    img: "/port25/img/imgsampyo.png",
   },
   {
     title: "VIDEO",
     colors: [],
     keyword: "정보전달 | 홍보 | 마케팅",
     detail: "박람회 및 회사 홍보성 영상 제작",
-    img: "/img/imgvideo.png",
+    img: "/port25/img/imgvideo.png",
   },
   {
     title: "익산박물관",
     colors: ["#987150", "#2156A4", "#DB6923", "#365E3C"],
     keyword: "단순화 | 흥미유발 | 정보전달",
     detail: "웹디자인 / 퍼블리싱",
-    img: "/img/imgiksan.png",
+    img: "/port25/img/imgiksan.png",
   },
 ];
 
@@ -74,7 +74,6 @@ const WorkSwiper = () => {
   const detailRef = useRef(null);
   const chipsRef = useRef(null);
 
-  // ✅ 슬라이드 전환 시 텍스트 페이드 애니메이션
   const handleSlideChange = (swiper) => {
     const current = slidesData[swiper.realIndex];
     setActive(current);
@@ -103,7 +102,6 @@ const WorkSwiper = () => {
     });
   };
 
-  // ✅ 텍스트 박스 초기 등장 애니메이션
   useEffect(() => {
     gsap.from(".text-box", {
       opacity: 0,
@@ -113,7 +111,6 @@ const WorkSwiper = () => {
     });
   }, []);
 
-  // ✅ 페이지 전체 진입 애니메이션
   useEffect(() => {
     const timer = setTimeout(() => {
       gsap.from(".page-content", { opacity: 0, y: 50, duration: 1 });
@@ -123,18 +120,18 @@ const WorkSwiper = () => {
 
   return (
     <main id="container" className="page-content">
-      {/* ✅ Text 영역 */}
+      {/* 텍스트 영역 */}
       <section className="text-box">
         <h2 id="brand-title" ref={titleRef}>
           {active.title}
         </h2>
 
-        {/* ✅ VIDEO 슬라이드일 경우 색상칩 대신 버튼 표시 */}
+        {/* VIDEO일 경우 버튼 */}
         {active.title === "VIDEO" ? (
           <div className="video-buttons-inline" ref={chipsRef}>
             <button
               onClick={() =>
-                window.open("hhttps://youtu.be/wFsmd1jOVrs", "_blank")
+                window.open("https://youtu.be/wFsmd1jOVrs", "_blank")
               }
             >
               01
@@ -170,7 +167,7 @@ const WorkSwiper = () => {
         </div>
       </section>
 
-      {/* ✅ Swiper 영역 */}
+      {/* Swiper 영역 */}
       <section className="swiper-area">
         <Swiper
           modules={[Pagination, Autoplay, EffectFade]}
