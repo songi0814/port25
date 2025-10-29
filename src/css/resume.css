@@ -20,8 +20,10 @@
 }
 
 #content {
+  min-height: 250vh; /* ResumeCard보다 긴 높이 확보 */
   position: relative;
 }
+
 
 .scroll {
   width: 100%;
